@@ -1,2 +1,5 @@
 ---
 # tasks file for ansible-role-softether-vpn
+
+- include_tasks: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
