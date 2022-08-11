@@ -5,3 +5,5 @@
   when: ansible_os_family == 'Debian'
 
 - include_tasks: install.yml
+
+- include_tasks: ufw.yml
