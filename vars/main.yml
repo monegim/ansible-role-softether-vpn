@@ -2,3 +2,14 @@
 # vars file for ansible-role-softether-vpn
 packages:
   - build-essential
+
+systemd_service_dir: /etc/systemd/system
+
+softether_dir: /opt/softether
+
+# 
+vpnserver_version: v4.39-9772-beta
+vpnserver_releasedate: 2022.04.26
+vpnserver_file: softether-vpnserver-{{vpnserver_version}}-{{vpnserver_releasedate}}-{{architecture}}.tar.gz
+architecture: linux-x64-64bit
+vpnserver_src: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/{{vpnserver_version}}/{{vpnserver_file}}

@@ -1,0 +1,19 @@
+---
+- name: Create Softether dir
+  file:
+    path: "{{ softether_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Download and extract vpnserver.tar.gz
+  unarchive:
+    remote_src: true
+    src: "{{ vpnserver_src }}"
+    dest: "{{ softether_dir }}"
+    extra_opts:
+      - --strip-components=1
+
+- name: Build vpnserver, vpncmd
+  make:
+    chdir: "{{ softether_dir }}"
+    target: main
