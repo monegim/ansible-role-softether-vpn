@@ -9,3 +9,6 @@
 - include_tasks: ufw.yml
 
 - include_tasks: service.yml
+
+- include_tasks: config.yml
+  
