@@ -12,3 +12,14 @@ You can install `openvpn` client on the device and follow this guide:
 5. select "import" from the software menu
 6. setect "importprofile from SD card"
 7. locate your ovpn file location and import it to the mobile phone.
+
+### Detail
+Open the host_openvpn_remote_access_l3.ovpn file with a texteditor and change proto udp --to--> proto tcp (udp is also possible, but sometimes blocked by firewalls)
+and of course:
+remote domain.de 1194 --to--> remote domain.de 443 (if you havn't changed it before)
+
+Install the offical openvpn-client to your iOS devise and import the ovpn-file (with the help of itunes or as a mail attachement).
+
+A nice to know: SoftEther listen at all "Listiner Ports" for any compatible vpn. So you can use OpnVPN (or ssl-vpn or SSTP) @443, @1194, @5555 or any other configured port.
+
+Btw. OpenVPN with TCP @443 looks also (compared with SSL VPN) very similar to "normal" ssl-traffic. So nearly everywhere, where https is allowed, the vpn works.
